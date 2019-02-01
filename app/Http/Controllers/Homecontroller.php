@@ -11,10 +11,8 @@ class Homecontroller extends Controller{
   public function home()
   {
     $env = env('APP_ENV');
-    $process = new Process("python python_scripts/turn_off.py");
-    if($env == "local_casterly_rock"):
-      $process = new Process("python3 python_scripts/turn_off.py");
-    endif;
+    dd($env);
+    $process = new Process("python3 python_scripts/turn_off.py");
     $process->run();
 
     // executes after the command finishes
@@ -28,11 +26,7 @@ class Homecontroller extends Controller{
   }
 
   public function turnOff(){
-    $env = env('APP_ENV');
-    $process = new Process("python python_scripts/turn_off.py");
-    if($env == "local_casterly_rock"):
-      $process = new Process("python3 python_scripts/turn_off.py");
-    endif;
+    $process = new Process("python3 python_scripts/turn_off.py");
     $process->run();
 
     // executes after the command finishes
@@ -46,11 +40,7 @@ class Homecontroller extends Controller{
   }
 
   public function turnOn(){
-    $env = env('APP_ENV');
-    $process = new Process("python python_scripts/turn_on.py");
-    if($env == "local_casterly_rock"):
-      $process = new Process("python3 python_scripts/turn_on.py");
-    endif;
+    $process = new Process("python3 python_scripts/turn_on.py");
     $process->run();
 
     // executes after the command finishes
