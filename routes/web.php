@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\HomeController;
+use app\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
