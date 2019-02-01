@@ -10,8 +10,11 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 class Homecontroller extends Controller{
   public function home()
   {
-    $text = 'The text you are desperate to analyze :)';
-    $process = new Process("python3 python_scripts/turn_off.py");
+    $env = env('APP_ENV');
+    $process = new Process("python python_scripts/turn_off.py");
+    if($env == "local_casterly_rock"):
+      $process = new Process("python3 python_scripts/turn_off.py");
+    endif;
     $process->run();
 
     // executes after the command finishes
@@ -25,7 +28,11 @@ class Homecontroller extends Controller{
   }
 
   public function turnOff(){
-    $process = new Process("python3 python_scripts/turn_off.py");
+    $env = env('APP_ENV');
+    $process = new Process("python python_scripts/turn_off.py");
+    if($env == "local_casterly_rock"):
+      $process = new Process("python3 python_scripts/turn_off.py");
+    endif;
     $process->run();
 
     // executes after the command finishes
@@ -39,7 +46,11 @@ class Homecontroller extends Controller{
   }
 
   public function turnOn(){
-    $process = new Process("python3 python_scripts/turn_on.py");
+    $env = env('APP_ENV');
+    $process = new Process("python python_scripts/turn_on.py");
+    if($env == "local_casterly_rock"):
+      $process = new Process("python3 python_scripts/turn_on.py");
+    endif;
     $process->run();
 
     // executes after the command finishes
