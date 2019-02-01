@@ -11,7 +11,6 @@ class Homecontroller extends Controller{
   public function home()
   {
     $env = env('APP_ENV');
-    dd($env);
     $process = new Process("python3 python_scripts/turn_off.py");
     $process->run();
 
