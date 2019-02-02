@@ -12,10 +12,8 @@ class Homecontroller extends Controller{
   {
     $env = env('APP_ENV');
     if($env == "local_casterly_rock"):
-      $process = new Process("python3 python_scripts/turn_off.py");
-    else:
-      $process = new Process("sudo pip3 install nanoleaf");
     endif;
+    $process = new Process("python3 python_scripts/turn_off.py");
     $process->run();
 
     // executes after the command finishes
