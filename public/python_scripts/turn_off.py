@@ -1,5 +1,5 @@
-from nanoleaf import setup
-from nanoleaf import Aurora
+from modules.nanoleaf import setup
+from modules.nanoleaf import Aurora
 
 # def printLog(*args, **kwargs):
 #     print(*args, **kwargs)
