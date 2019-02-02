@@ -11,7 +11,7 @@ class Homecontroller extends Controller{
   public function home()
   {
     $env = env('APP_ENV');
-    if($env == "local_casterly_rock");
+    if($env == "local_casterly_rock"):
       $process = new Process("python3 python_scripts/turn_off.py");
     else:
       $process = new Process("pip3 install nanoleaf");
