@@ -13,7 +13,10 @@ class Homecontroller extends Controller{
     $env = env('APP_ENV');
     if($env == "local_casterly_rock"):
     endif;
-    $process = new Process("python3 python_scripts/turn_off.py");
+    $command = "python3 ./python_scripts/turn_off.py";
+    $cwd = null;
+    $envVars = [ 'HOME' => getEnv('HOME'), 'PATH' => getEnv('PATH') ];
+    $process = new Process($command, $cwd, $envVars);
     $process->run();
 
     // executes after the command finishes
