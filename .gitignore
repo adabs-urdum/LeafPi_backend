@@ -1,3 +1,4 @@
+*.pyc
 public/python_scripts/modules/nanoleaf/__pycache__/*.pyc
 /node_modules
 /public/hot
