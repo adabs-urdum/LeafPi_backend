@@ -15,3 +15,6 @@ use app\Http\Controllers\HomeController;
 Route::get('/', 'HomeController@home');
 Route::get('/turn-on', 'HomeController@turnOn')->name('turnOn');
 Route::get('/turn-off', 'HomeController@turnOff')->name('turnOff');
+Route::get('/toggle-on', 'HomeController@toggleOn')->name('toggleOn');
+Route::get('/brightness/{newBrightness}', 'HomeController@brightness')->name('brightness');
+Route::get('/temperature/{newTemperature}', 'HomeController@temperature')->name('temperature');
