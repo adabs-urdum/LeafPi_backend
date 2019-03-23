@@ -1,13 +1,11 @@
 from modules.nanoleaf import Aurora
 from variables import auroraList
-
-# def printLog(*args, **kwargs):
-#     print(*args, **kwargs)
-#     with open('output.out','a') as file:
-#         print(*args, **kwargs, file=file)
+import json
+import sys
 
 for aurora in auroraList:
     ipAddress = aurora['ip']
     token = aurora['token']
     myAurora = Aurora(ipAddress, token)
-    myAurora.on = True
+    step = int(sys.argv[1])
+    myAurora.color_temperature_raise(step)
